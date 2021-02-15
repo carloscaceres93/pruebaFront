@@ -1,0 +1,31 @@
+<button type="button" class="btn btn-success" (click)="modalGestionarEstudiante(0)">
+    <i class="plus icon"></i>Asignar Puesto
+</button>
+<div class="mt-4">
+    Puestos disponibles : {{numeroPuestosDisponibles}}
+</div>
+
+<table class="table table-hover mt-4">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Numero Identificación</th>
+            <th>Estudiante</th>
+            <th>Puesto Asignado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listaPuestosOcupados">
+            <td>{{item.id}}</td>
+            <td>{{item.idEstudiante.id}}</td>
+            <td>{{item.idEstudiante.nombre}}</td>
+            <td>{{item.idPuesto.lugar}}</td>
+            <td>
+                <div>
+                    <button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

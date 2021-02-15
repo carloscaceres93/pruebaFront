@@ -1,0 +1,31 @@
+<button type="button" class="btn btn-success" (click)="modalGestionarEstudiante(0)">
+    <i class="plus icon"></i>Nuevo Estudiante
+</button>
+
+<table class="table table-hover mt-4">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Numero identificacion</th>
+            <th>Nombre</th>
+            <th>apellido</th>
+            <th>Telefono</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listaEstudiante">
+            <td>{{item.id}}</td>
+            <td>{{item.numeroIdentificacion}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.apellido}}</td>
+            <td>{{item.telefono}}</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary"  (click)="modalGestionarEstudiante(item.id)">Actualizar</button>
+                    <button type="button" class="btn btn-danger" (click)="eliminar(item.id)">Eliminar</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
